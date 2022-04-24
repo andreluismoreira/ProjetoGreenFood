@@ -1,5 +1,6 @@
 package greenfood.resource;
 
+import greenfood.DTO.pedido.AdicionarPedidoDTO;
 import greenfood.DTO.pedido.PedidoDTO;
 import greenfood.DTO.pedido.PedidoMapper;
 import greenfood.entity.Pedido;
@@ -33,7 +34,8 @@ public class PedidoResouce {
     @Transactional
     @APIResponse(responseCode = "201", description = " Caso o pedido seja cadastrado com sucesso")
     @APIResponse(responseCode = "400",content = @Content(schema = @Schema(allOf= ConstraintViolationResponse.class)))
-    public Response adicionar(@Valid Pedido pedido) {
+    public Response adicionar(@Valid AdicionarPedidoDTO dto) {
+        Pedido pedido = pedidoMapper.toPedido(dto);
         pedido.persist();
         return Response.status(Response.Status.CREATED).build();
     }
@@ -43,7 +45,6 @@ public class PedidoResouce {
         Stream<Pedido> pedidos = Pedido.streamAll();
         return pedidos.map(p ->
                 pedidoMapper.toPedidoDTO(p)).collect(Collectors.toList());
-
     }
 
     @DELETE
