@@ -9,4 +9,6 @@ public class AdicionarPratoDTO {
     public String descricao;
 
     public BigDecimal preco;
+
+    public String calorias;
 }

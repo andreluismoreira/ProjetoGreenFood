@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 public class AdicionarUsuarioDTO implements DTO  {
 
     @NotEmpty
-    @Size(min = 4,max = 30)
+    @Size(min = 4,max = 50)
     public String nome;
 
     @NotEmpty
@@ -21,11 +21,11 @@ public class AdicionarUsuarioDTO implements DTO  {
     public String cpf;
 
     @NotEmpty
-    @Size(min = 10,max = 15)
+    @Size(min = 12,max = 25)
     public String email;
 
     @NotEmpty
-    @Size(min = 8,max = 15)
+    @Size(min = 9,max = 15)
     public String telefone;
 
     public EnderecoDTO endereco;

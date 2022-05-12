@@ -1,7 +1,5 @@
 package greenfood.DTO;
 
-import javax.validation.constraints.NotEmpty;
-
 public class CartaoDTO {
 
     public String nomeUsuario;

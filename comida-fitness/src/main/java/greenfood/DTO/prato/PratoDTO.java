@@ -1,6 +1,5 @@
 package greenfood.DTO.prato;
 
-import greenfood.entity.Pedido;
 import greenfood.entity.Restaurante;
 
 import java.math.BigDecimal;
@@ -12,6 +11,8 @@ public class PratoDTO {
     public String nome;
 
     public String descricao;
+
+    public String calorias;
 
     public Restaurante restaurante;
 
